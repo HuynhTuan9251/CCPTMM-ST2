@@ -1,0 +1,56 @@
+.store-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+    gap: 20px;
+  }
+  
+  .store-image-section {
+    width: 60%;
+  }
+  
+  .store-text-section {
+    width: 40%;
+    text-align: left;
+  }
+  
+  .store-title {
+    font-size: 36px;
+    color: #bf9369;
+    font-family: 'Fira Sans', sans-serif;
+  }
+  
+  .store-description {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+    font-family: 'Fira Sans', sans-serif;
+  }
+  
+  .store-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #bf9369;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .store-button:hover {
+    background-color: #a77c56;
+  }
+  
+
+
+  
+.store-image {
+    width: 100%;  /* Đảm bảo ảnh luôn đầy đủ chiều rộng */
+    height: 500px; /* Chiều cao cố định */
+    object-fit: cover; /* Cắt ảnh theo tỷ lệ, tránh méo */
+    border-radius: 10px; /* Bo góc nhẹ */
+  }

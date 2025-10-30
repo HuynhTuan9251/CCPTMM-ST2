@@ -1,0 +1,110 @@
+/* Trang Tin tức */
+.tintuc-page {
+
+    min-height: 100vh;
+    padding: 50px 0;
+}
+
+/* Tiêu đề */
+.tch-box__title-news {
+    font-family: 'Fira Sans', sans-serif;
+    color: #5a3e2b;
+}
+
+.tch-box__title-news .text-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Card bài viết */
+.article-card-tintuc {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-card-tintuc:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(90, 62, 43, 0.2);
+}
+
+.tch-product__card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.tch-product__image {
+    position: relative;
+    width: 100%;
+    padding-bottom: 75%; /* Tỷ lệ 4:3 để hình ảnh không bị méo */
+}
+
+.tch-product__image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+    transition: transform 0.3s ease;
+}
+
+.article-card-tintuc:hover .tch-product__image img {
+    transform: scale(1.05); /* Hiệu ứng phóng to hình ảnh khi hover */
+}
+
+.tch-product__content {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tch-product-content__title {
+    color: #5a3e2b;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Nút Đọc tiếp */
+.btn-tintuc {
+    background-color: #5a3e2b;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-tintuc:hover {
+    background-color: #4a3223;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tch-box__title-news .text-title {
+        font-size: 2rem;
+    }
+
+    .tch-product-content__title {
+        font-size: 1rem;
+    }
+
+    .btn-tintuc {
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .tch-product__image {
+        padding-bottom: 100%; /* Tỷ lệ 1:1 trên mobile để tránh méo */
+    }
+}

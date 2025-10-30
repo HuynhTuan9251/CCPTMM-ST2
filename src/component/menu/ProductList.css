@@ -1,0 +1,259 @@
+/* ProductList.css */
+
+/* Phần danh mục chính */
+.cs-category-section {
+  padding: 40px 20px;
+  background: #fff; /* Nền trắng giống hình */
+  margin: 20px auto;
+  max-width: 1400px;
+}
+
+/* Tiêu đề Menu */
+.cs-menu-header {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.cs-menu-title {
+  font-family: 'Arial', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #f4a261; /* Màu cam giống trong hình */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.cs-icon i {
+  color: #f4a261; /* Màu cam cho icon */
+}
+
+/* Danh sách danh mục */
+.cs-tch-category-card-list {
+  list-style: none;
+  padding: 0;
+  gap: 20px; /* Khoảng cách giữa các danh mục */
+}
+
+.cs-custom-nav-item {
+  flex: 0 0 auto;
+}
+
+.cs-nav-link-category {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Trạng thái active cho danh mục */
+.cs-nav-link-category.active {
+  border-bottom: 3px solid #f4a261; /* Đường viền dưới màu cam khi active */
+}
+
+/* Thẻ danh mục */
+.cs-tch-category-card {
+  width: 110px; /* Kích thước giống trong hình */
+  background: transparent; /* Không có nền */
+  transition: transform 0.3s ease;
+}
+
+/* Hiệu ứng hover */
+.cs-tch-category-card:hover {
+  transform: scale(1.1); /* Phóng to khi hover */
+}
+
+/* Hình ảnh danh mục */
+.cs-tch-category-card__image {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* Giữ hình tròn */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; /* Bo tròn khung hình */
+  overflow: hidden; /* Đảm bảo ảnh không tràn ra ngoài */
+}
+
+.cs-tch-category-card__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%; /* Bo tròn ảnh */
+  border: 2px solid transparent; /* Viền mặc định trong suốt */
+  transition: border-color 0.3s ease;
+}
+
+/* Hiệu ứng hover và active cho hình ảnh */
+.cs-nav-link-category:hover .cs-tch-category-card__image img,
+.cs-nav-link-category.active .cs-tch-category-card__image img {
+  border-color: #f4a261; /* Viền cam khi hover hoặc active */
+}
+
+/* Tên danh mục */
+.cs-tch-category-card__content {
+  margin-top: 10px; /* Khoảng cách giữa hình và chữ */
+}
+
+.cs-tch-category-card__content h5 {
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+  padding: 0 5px;
+  text-align: center;
+  transition: color 0.3s ease;
+  white-space: normal; /* Cho phép chữ xuống dòng nếu quá dài */
+  line-height: 1.2; /* Đảm bảo chữ không bị dính sát nhau */
+}
+
+/* Đổi màu chữ khi hover hoặc active */
+.cs-nav-link-category:hover .cs-tch-category-card__content h5,
+.cs-nav-link-category.active .cs-tch-category-card__content h5 {
+  color: #f4a261; /* Màu cam khi hover hoặc active */
+}
+
+/* Nội dung sản phẩm */
+.cs-tab-content {
+  margin-top: 40px;
+}
+
+.cs-tab-content h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Thẻ sản phẩm */
+.cs-tch-product__card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.cs-tch-product__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cs-tch-product__image {
+  width: 100%;
+  height: 200px; /* Chiều cao cố định cho ảnh sản phẩm */
+  overflow: hidden;
+}
+
+.cs-tch-product__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.cs-tch-product__card:hover .cs-tch-product__image img {
+  transform: scale(1.05);
+}
+
+.cs-tch-product__content {
+  padding: 15px;
+  text-align: left; /* Căn trái giống trong hình */
+}
+
+.cs-custom-title {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.cs-custom-price {
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #e76f51; /* Màu cam đậm cho giá */
+  margin-bottom: 10px;
+}
+
+/* Nút thêm vào giỏ hàng */
+.cs-btn-success {
+  background: #2a9d8f; /* Màu xanh lam giống trong hình */
+  border: none;
+  border-radius: 10px;
+  padding: 8px 15px;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #fff;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cs-btn-success:hover {
+  background: #248f83; /* Đậm hơn khi hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(42, 157, 143, 0.3);
+}
+
+.cs-btn-success::before {
+  content: '🛒';
+  font-size: 1rem;
+}
+
+/* Thông báo không có sản phẩm */
+.cs-tab-content p {
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cs-menu-title {
+    font-size: 2rem;
+  }
+
+  .cs-tch-category-card {
+    width: 90px; /* Giảm kích thước cho màn nhỏ */
+  }
+
+  .cs-tch-category-card__content h5 {
+    font-size: 0.9rem; /* Giảm kích thước chữ cho màn nhỏ */
+  }
+
+  .cs-tab-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .cs-tch-product__card {
+    margin-bottom: 20px;
+  }
+
+  .cs-custom-title {
+    font-size: 1rem;
+  }
+
+  .cs-custom-price {
+    font-size: 0.9rem;
+  }
+
+  .cs-btn-success {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}

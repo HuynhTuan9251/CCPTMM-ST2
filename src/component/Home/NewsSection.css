@@ -1,0 +1,108 @@
+.news-section {
+    padding: 50px 0;
+    background: #fff;
+  }
+  
+  .news-section-title {
+    color: #5a3e2b;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+  
+  .wppsac-carousel-slides {
+    padding: 0 15px;
+  }
+  
+  .wppsac-post-image-bg {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Tỷ lệ 16:9 */
+    overflow: hidden; /* Đảm bảo hình ảnh không tràn ra ngoài */
+  }
+  
+  .wppsac-post-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+    transition: transform 0.3s ease;
+  }
+  
+  .wppsac-carousel-slides:hover .wppsac-post-image {
+    transform: scale(1.05);
+  }
+  
+  .wppsac-post-content-position {
+    padding: 15px;
+    background: #ffffff;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 4px 10px rgba(90, 62, 43, 0.1);
+  }
+  
+  .wppsac-post-title {
+    margin: 0 0 10px;
+  }
+  
+  .wppsac-post-title a {
+    color: #5a3e2b;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Giới hạn 2 dòng */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.4; /* Đảm bảo khoảng cách dòng hợp lý */
+  }
+  
+  .wppsac-post-title a:hover {
+    color: #bf9369;
+  }
+  
+  .wppsac-post-date {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+  
+  .wppsac-post-content {
+    color: #5a3e2b;
+  }
+  
+  .wppsac-readmorebtn {
+    color: #bf9369;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .wppsac-readmorebtn:hover {
+    text-decoration: underline;
+  }
+  
+  /* Slick Slider styles */
+  .slick-prev,
+  .slick-next {
+    background: #5a3e2b;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+  }
+  
+  .slick-prev:before,
+  .slick-next:before {
+    color: #4eb7ce;
+  }
+  
+  .slick-dots li button:before {
+    font-size: 12px;
+    color: #bf9369;
+  }
+  
+  .slick-dots li.slick-active button:before {
+    color: #5a3e2b;
+  }
