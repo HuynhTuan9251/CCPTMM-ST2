@@ -1,0 +1,120 @@
+/* Navbar chính */
+.navbar {
+  background: linear-gradient(90deg, #f7e8d1 0%, #f0d9b5 100%);
+  padding: 15px 0;
+  transition: all 0.3s ease;
+}
+
+/* Logo và tiêu đề */
+.navbar-brand {
+  transition: transform 0.2s ease;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+}
+
+.navbar-title {
+  color: #5a3e2b;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+}
+
+.navbar-icon {
+  font-size: 1.1rem;
+}
+
+.coffee-icon {
+  color: #5a3e2b;
+  font-size: 1.5rem;
+}
+
+/* Các liên kết điều hướng */
+.nav-link {
+  color: #4a4a4a;
+  font-weight: 500;
+  padding: 10px 20px;
+  position: relative;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #5a3e2b;
+  transform: translateY(-2px);
+}
+
+.nav-link.active {
+  color: #5a3e2b;
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  background-color: #5a3e2b;
+  bottom: -5px;
+  left: 25%;
+}
+
+/* Nút Đăng nhập */
+.btn-outline-primary {
+  border-color: #5a3e2b;
+  color: #5a3e2b;
+  padding: 8px 20px;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background-color: #5a3e2b;
+  color: #fff;
+}
+
+/* Nút Đăng ký */
+.btn-primary {
+  background-color: #5a3e2b;
+  border-color: #5a3e2b;
+  padding: 8px 20px;
+  border-radius: 25px;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #4a3223;
+  border-color: #4a3223;
+}
+
+/* Dropdown */
+.btn-outline-secondary {
+  border-color: #5a3e2b;
+  color: #5a3e2b;
+  padding: 8px 15px;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #f7e8d1;
+}
+
+.dropdown-menu {
+  border-radius: 10px;
+  padding: 10px 0;
+}
+
+.dropdown-item {
+  padding: 8px 20px;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #f7e8d1;
+}
+
+/* Khoảng cách giữa các phần tử */
+.gap-3 {
+  gap: 1rem !important;
+}

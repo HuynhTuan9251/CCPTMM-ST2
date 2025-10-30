@@ -1,0 +1,324 @@
+/* Reset mặc định */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Fira Sans', sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5; /* Nền nhẹ nhàng hơn */
+}
+
+/* Main container */
+.main {
+  width: 100%;
+  background-color: #f9f9f9;
+}
+
+/* Elementor container */
+.elementor-container {
+  max-width: 1240px; /* Tăng nhẹ để thoáng hơn */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Columns */
+.elementor-column {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.elementor-col-100 {
+  width: 100%;
+}
+
+.elementor-col-33 {
+  width: 33.33%;
+  padding: 25px;
+  text-align: center;
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+}
+
+.elementor-col-50 {
+  width: 50%;
+  padding: 35px; /* Tăng padding cho thoáng */
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+/* Spacer */
+.elementor-spacer {
+  height: 50px; /* Tăng khoảng cách cho bố cục đẹp hơn */
+}
+
+/* Images */
+.elementor-widget-image img {
+  max-width: 100%;
+  height: 100%;
+  height: auto;
+  border-radius: 12px; /* Bo góc mềm mại hơn */
+
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  object-fit: cover;
+}
+
+.elementor-widget-image img:hover {
+  transform: scale(1.05); /* Tăng nhẹ hiệu ứng zoom */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+/* Logo */
+.elementor-widget-image:first-child img {
+  max-width: 220px; /* Tăng kích thước logo */
+  margin: 0 auto;
+  display: block;
+}
+
+/* Banner */
+.elementor-widget-image:nth-child(4) img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Headings */
+.elementor-heading-title {
+  font-size: 68px; /* Tăng nhẹ cho nổi bật */
+  font-weight: 700;
+  color: #114358;
+  text-align: center;
+  margin: 50px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px; /* Tăng khoảng cách chữ */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Thêm bóng nhẹ */
+}
+
+.elementor-widget-container h2 {
+  font-size: 74px;
+  color: #bf9972;
+  font-weight: 600;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.elementor-widget-container h1.center {
+  font-size: 84px; /* Tăng nhẹ */
+  color: #bc9369;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.elementor-widget-container h4 {
+  font-size: 24px; /* Tăng nhẹ cho dễ đọc */
+  color: #114358;
+  font-weight: 400;
+}
+
+/* Text */
+.elementor-widget-container p {
+  font-size: 19px; /* Tăng nhẹ */
+  color: #bf9972;
+  line-height: 1.9;
+  text-align: center;
+  margin: 25px 0;
+}
+
+.elementor-widget-container h6 {
+  font-size: 19px;
+  color: #14445c;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.elementor-widget-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.elementor-widget-container ul li {
+  font-size: 17px;
+  color: #14445c;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  position: relative;
+  padding-left: 25px;
+}
+
+.elementor-widget-container ul li::before {
+  content: "•";
+  color: #ba916a;
+  font-size: 22px;
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
+
+/* Button */
+.elementor-button {
+  display: inline-block;
+  padding: 14px 35px; /* Tăng kích thước nút */
+  background: linear-gradient(135deg, #ba916a, #a07b5a); /* Gradient nhẹ */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px; /* Bo góc hơn */
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.elementor-button:hover {
+  background: linear-gradient(135deg, #a07b5a, #8f6748);
+  transform: translateY(-3px); /* Nâng cao hơn */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Section-specific styles */
+.elementor-section {
+  padding: 70px 0; /* Tăng padding */
+  background-color: #fff;
+  border-radius: 20px; /* Bo góc lớn hơn */
+  margin: 25px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06); /* Đổ bóng nhẹ hơn */
+}
+
+/* Thống kê section */
+.elementor-element-0dbe7ec {
+  background: linear-gradient(to bottom, #f5ece5, #f0e4db); /* Gradient nhẹ */
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.elementor-element-0dbe7ec .elementor-container {
+  display: flex;
+  width: 100%;
+}
+
+.elementor-element-0dbe7ec .elementor-col-33 {
+  transition: transform 0.4s ease;
+  background: rgba(255, 255, 255, 0.8); /* Nền trắng nhẹ */
+  border-radius: 15px;
+  padding: 30px;
+}
+
+.elementor-element-0dbe7ec .elementor-col-33:hover {
+  transform: translateY(-12px); /* Nâng cao hơn */
+}
+
+/* Sản phẩm section */
+.elementor-element-322d6ba {
+  background-color: #fff;
+}
+
+.elementor-inner-section {
+  margin: 50px 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Đảm bảo tỉ lệ 1:1 cho Cà Phê và Trà */
+.elementor-inner-section .elementor-col-50 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.elementor-inner-section .elementor-widget-container {
+  width: 100%;
+}
+
+/* Kết luận section */
+.elementor-element-f17f893 {
+  background: linear-gradient(to bottom, #f9f9f9, #f2f2f2); /* Gradient nhẹ */
+}
+
+/* Animation */
+.slideInDown {
+  animation: slideInDown 1.2s ease-in-out; /* Tăng thời gian animation */
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .elementor-col-50 {
+    width: 100%;
+    padding: 25px;
+  }
+
+  .elementor-inner-section {
+    flex-direction: column;
+    margin: 30px 0;
+  }
+
+  .elementor-heading-title {
+    font-size: 52px;
+  }
+
+  .elementor-widget-container h2 {
+    font-size: 60px;
+  }
+
+  .elementor-widget-container h1.center {
+    font-size: 64px;
+  }
+}
+
+@media (max-width: 768px) {
+  .elementor-col-33 {
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .elementor-element-0dbe7ec {
+    flex-direction: column;
+  }
+
+  .elementor-heading-title {
+    font-size: 40px;
+    margin: 30px 0;
+  }
+
+  .elementor-widget-container h2 {
+    font-size: 48px;
+    text-align: center;
+  }
+
+  .elementor-widget-container h1.center {
+    font-size: 52px;
+  }
+
+  .elementor-widget-container h4 {
+    font-size: 20px;
+  }
+
+  .elementor-section {
+    padding: 50px 0;
+    margin: 15px 0;
+  }
+
+  .elementor-button {
+    padding: 12px 25px;
+    font-size: 15px;
+  }
+
+  .elementor-spacer {
+    height: 30px;
+  }
+}
