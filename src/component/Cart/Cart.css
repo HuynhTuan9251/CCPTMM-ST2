@@ -1,0 +1,12 @@
+/* Cart.css */
+.btn-success {
+    background: linear-gradient(45deg, #28a745, #48bb78);
+    border: none;
+  }
+  .btn-danger:hover {
+    background-color: #c82333;
+  }
+  .form-control:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+  }

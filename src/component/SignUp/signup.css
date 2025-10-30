@@ -1,0 +1,131 @@
+/* Trang đăng ký */
+.signup-page {
+  margin : 30px 0;
+  min-height: 100vh;
+}
+
+/* Container hình ảnh */
+.image-container {
+  position: relative;
+  height: 100%; /* Giữ nguyên chiều cao 100% của container cha */
+  overflow: hidden;
+  min-height: 600px; /* Đặt chiều cao tối thiểu cho ảnh để không bị cắt */
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Đảm bảo ảnh phủ đầy mà không bị méo */
+  border-radius: 15px 0 0 15px;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(90, 62, 43, 0.3);
+}
+
+/* Signup card */
+.signup-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(90, 62, 43, 0.2);
+  min-height: 600px; /* Tăng chiều cao tối thiểu để đồng bộ với ảnh */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Căn giữa nội dung form theo chiều dọc */
+}
+
+.signup-card h2 {
+  color: #5a3e2b;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+/* Label và Input */
+.signup-label {
+  color: #5a3e2b;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.signup-input,
+.signup-select {
+  border-radius: 10px;
+  padding: 12px;
+  font-family: 'Fira Sans', sans-serif;
+  border: 1px solid #bf9369;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+.signup-input:focus,
+.signup-select:focus {
+  border-color: #5a3e2b;
+  box-shadow: 0 0 5px rgba(90, 62, 43, 0.3);
+  outline: none;
+}
+
+/* Button */
+.signup-btn {
+  background-color: #5a3e2b;
+  color: #fff;
+  border-radius: 10px;
+  padding: 12px;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.signup-btn:hover {
+  background-color: #4a3223;
+}
+
+/* Link */
+.text-link {
+  color: #bf9369;
+  text-decoration: none;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+/* Text muted */
+.text-muted {
+  color: #8a6d4b;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .signup-card {
+      padding: 20px;
+      min-height: auto; /* Trên mobile, bỏ min-height để tự điều chỉnh */
+  }
+
+  .signup-card h2 {
+      font-size: 1.5rem;
+  }
+
+  .signup-input,
+  .signup-select {
+      padding: 10px;
+  }
+
+  .signup-btn {
+      padding: 10px;
+  }
+
+  .image-container {
+      display: none; /* Ẩn ảnh trên mobile như thiết kế ban đầu */
+  }
+}

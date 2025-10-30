@@ -1,0 +1,25 @@
+.chitiet-page {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.chitiet-container {
+    max-width: 800px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.kg-image-card {
+    display: flex;
+    justify-content: center;
+    margin: 14px auto;
+}
+
+.kg-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}

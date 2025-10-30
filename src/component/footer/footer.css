@@ -1,0 +1,25 @@
+.tch-footer__top-content {
+    background-image: url('/src/assets/footer-desktop.727f3a2.png');
+    background-size: 100% auto ; /* Width 100%, height auto to maintain aspect ratio */
+   
+    width: 100% ; 
+    color :white;
+    padding: 20px;
+    margin-top: 100px;
+
+   
+}
+.tch-footer__bottom-content{
+    background-color: black;
+    color: white;
+}
+.tch-footer__navbar-item-body a {
+    text-decoration: none; /* Removes the underline from links */
+    color: inherit; /* Ensures the text color matches the parent element */
+}
+
+.tch-footer__navbar-item-body a:hover {
+    text-decoration: underline; /* Optional: add underline on hover for better UX */
+}
+
+

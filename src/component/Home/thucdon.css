@@ -1,0 +1,285 @@
+/* Trang Thực đơn */
+.menu-page {
+
+    min-height: 100vh;
+    padding: 50px 0;
+  }
+  
+  /* Tiêu đề chính */
+  .menu-title {
+    color: #5a3e2b;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  
+  /* Phần quảng cáo */
+  .promotion-section {
+    margin-bottom: 20px;
+  }
+  
+  .menu-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .menu-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(90, 62, 43, 0.2);
+  }
+  
+  .menu-image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 125%; /* Tỷ lệ 4:5 */
+  }
+  
+  .menu-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+    transition: transform 0.3s ease;
+  }
+  
+  .menu-card:hover .menu-image {
+    transform: scale(1.05);
+  }
+  
+  .menu-item-title {
+    color: #bf9369;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 15px 0;
+    margin: 0;
+  }
+  
+  /* Phần danh mục */
+  .category-section {
+    margin-bottom: 20px;
+  }
+  
+  .tch-category-card-list {
+    list-style: none;
+    padding: 0;
+    gap: 20px;
+  }
+  
+  .custom-nav-item {
+    flex: 0 0 auto;
+  }
+  
+  .nav-link-category {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  
+  .tch-category-card {
+    width: 120px;
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  .tch-category-card__image {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* Hình tròn */
+  }
+  
+  .tch-category-card__image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .tch-category-card__content h5 {
+    color: #5a3e2b;
+    font-size: 1rem;
+    margin: 10px 0;
+  }
+  
+  .tab-content h2 {
+    color: #5a3e2b;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  
+  .tch-product__card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .tch-product__card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(90, 62, 43, 0.2);
+  }
+  
+  .tch-product__image {
+    position: relative;
+    width: 100%;
+    padding-bottom: 125%;
+  }
+  
+  .tch-product__image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+  }
+  
+  .tch-product__content {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .custom-title {
+    color: #5a3e2b;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .custom-price {
+    color: #bf9369;
+    font-size: 1rem;
+    margin: 5px 0;
+  }
+  
+  .btn-success {
+    background-color: #5a3e2b;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 10px;
+  }
+  
+  .btn-success:hover {
+    background-color: #4a3223;
+  }
+  
+  /* Phần Giới thiệu */
+  .about-section {
+    padding: 50px 0;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(90, 62, 43, 0.1);
+    
+  }
+  
+  .about-title {
+    color: #bf9369;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 36pt;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .about-subtitle {
+    color: #bf9369;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 14pt;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: left;
+    margin-bottom: 15px;
+  }
+  
+  .about-text {
+    color: #bf9369;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 14pt;
+    line-height: 1.5;
+    text-align: left;
+  }
+  
+  .about-text span {
+    font-weight: 400;
+  }
+  
+  .about-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 2px solid #bf9369;
+    color: #bf9369;
+    border-radius: 25px;
+    text-decoration: none;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .about-btn:hover {
+    background-color: #bf9369;
+    color: #fff;
+  }
+  
+  .about-image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* Hình vuông */
+  }
+  
+  .about-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+  }
+  
+  .about-image:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .menu-title {
+      font-size: 2rem;
+    }
+  
+    .menu-item-title {
+      font-size: 1.2rem;
+    }
+  
+    .tch-category-card {
+      width: 100px;
+    }
+  
+    .about-title {
+      font-size: 24pt;
+    }
+  
+    .about-subtitle {
+      font-size: 12pt;
+    }
+  
+    .about-text {
+      font-size: 12pt;
+    }
+  
+    .about-btn {
+      padding: 8px 15px;
+    }
+  }

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Authentication</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        .result { margin: 10px 0; padding: 10px; border-radius: 3px; }
+        .success { background-color: #d4edda; color: #155724; }
+        .error { background-color: #f8d7da; color: #721c24; }
+        button { padding: 10px 15px; margin: 5px; border: none; border-radius: 3px; cursor: pointer; }
+        .btn-primary { background-color: #007bff; color: white; }
+        .btn-success { background-color: #28a745; color: white; }
+        .btn-danger { background-color: #dc3545; color: white; }
+    </style>
+</head>
+<body>
+    <h1>Test Authentication & Authorization</h1>
+    
+    <div class="test-section">
+        <h3>1. Test User Login</h3>
+        <input type="email" id="userEmail" placeholder="User Email" value="user@example.com">
+        <input type="password" id="userPassword" placeholder="User Password" value="password123">
+        <button class="btn-primary" onclick="testUserLogin()">Login as User</button>
+        <div id="userLoginResult"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>2. Test Admin Login</h3>
+        <input type="email" id="adminEmail" placeholder="Admin Email" value="admin@example.com">
+        <input type="password" id="adminPassword" placeholder="Admin Password" value="admin123">
+        <button class="btn-primary" onclick="testAdminLogin()">Login as Admin</button>
+        <div id="adminLoginResult"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>3. Test Current User Info</h3>
+        <button class="btn-success" onclick="checkCurrentUser()">Check Current User</button>
+        <div id="currentUserResult"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>4. Test Add to Cart</h3>
+        <button class="btn-success" onclick="testAddToCart()">Test Add to Cart</button>
+        <div id="addToCartResult"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>5. Test Admin Dashboard Access</h3>
+        <button class="btn-success" onclick="testAdminAccess()">Test Admin Access</button>
+        <div id="adminAccessResult"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>6. Clear All Data</h3>
+        <button class="btn-danger" onclick="clearAllData()">Clear All Data</button>
+        <div id="clearDataResult"></div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:3000/api';
+
+        function showResult(elementId, message, isSuccess = true) {
+            const element = document.getElementById(elementId);
+            element.innerHTML = `<div class="result ${isSuccess ? 'success' : 'error'}">${message}</div>`;
+        }
+
+        async function testUserLogin() {
+            try {
+                const email = document.getElementById('userEmail').value;
+                const password = document.getElementById('userPassword').value;
+                
+                const response = await fetch(`${API_BASE}/auth/login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ Email: email, MatKhau: password })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    localStorage.setItem('user', JSON.stringify(result.data));
+                    localStorage.setItem('token', result.data.token);
+                    showResult('userLoginResult', `✅ User login successful! Role: ${result.data.VaiTro}`, true);
+                } else {
+                    showResult('userLoginResult', `❌ User login failed: ${result.message}`, false);
+                }
+            } catch (error) {
+                showResult('userLoginResult', `❌ Error: ${error.message}`, false);
+            }
+        }
+
+        async function testAdminLogin() {
+            try {
+                const email = document.getElementById('adminEmail').value;
+                const password = document.getElementById('adminPassword').value;
+                
+                const response = await fetch(`${API_BASE}/auth/login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ Email: email, MatKhau: password })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    localStorage.setItem('user', JSON.stringify(result.data));
+                    localStorage.setItem('token', result.data.token);
+                    showResult('adminLoginResult', `✅ Admin login successful! Role: ${result.data.VaiTro}`, true);
+                } else {
+                    showResult('adminLoginResult', `❌ Admin login failed: ${result.message}`, false);
+                }
+            } catch (error) {
+                showResult('adminLoginResult', `❌ Error: ${error.message}`, false);
+            }
+        }
+
+        function checkCurrentUser() {
+            try {
+                const user = JSON.parse(localStorage.getItem('user') || '{}');
+                const token = localStorage.getItem('token');
+                
+                let message = `Current User Info:\n`;
+                message += `- Name: ${user.TenNguoiDung || 'N/A'}\n`;
+                message += `- Email: ${user.Email || 'N/A'}\n`;
+                message += `- Role: ${user.VaiTro || 'N/A'}\n`;
+                message += `- User ID: ${user.MaNguoiDung || 'N/A'}\n`;
+                message += `- Token: ${token ? 'Present' : 'Missing'}\n`;
+                
+                showResult('currentUserResult', message.replace(/\n/g, '<br>'), true);
+            } catch (error) {
+                showResult('currentUserResult', `❌ Error: ${error.message}`, false);
+            }
+        }
+
+        async function testAddToCart() {
+            try {
+                const user = JSON.parse(localStorage.getItem('user') || '{}');
+                const token = localStorage.getItem('token');
+                
+                if (!user.MaNguoiDung || !token) {
+                    showResult('addToCartResult', '❌ No user logged in or missing token', false);
+                    return;
+                }
+                
+                const response = await fetch(`${API_BASE}/cart`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({
+                        MaKhachHang: user.MaNguoiDung,
+                        MaSanPham: 1, // Test product ID
+                        SoLuong: 1
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    showResult('addToCartResult', `✅ Add to cart successful!`, true);
+                } else {
+                    showResult('addToCartResult', `❌ Add to cart failed: ${result.message}`, false);
+                }
+            } catch (error) {
+                showResult('addToCartResult', `❌ Error: ${error.message}`, false);
+            }
+        }
+
+        function testAdminAccess() {
+            try {
+                const user = JSON.parse(localStorage.getItem('user') || '{}');
+                
+                if (user.VaiTro === 'Admin') {
+                    showResult('adminAccessResult', `✅ Admin access granted! User role: ${user.VaiTro}`, true);
+                } else {
+                    showResult('adminAccessResult', `❌ Admin access denied! User role: ${user.VaiTro || 'None'}`, false);
+                }
+            } catch (error) {
+                showResult('adminAccessResult', `❌ Error: ${error.message}`, false);
+            }
+        }
+
+        function clearAllData() {
+            localStorage.removeItem('user');
+            localStorage.removeItem('token');
+            showResult('clearDataResult', '✅ All data cleared!', true);
+        }
+    </script>
+</body>
+</html> 

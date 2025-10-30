@@ -1,0 +1,15 @@
+/* AccountSettings.css */
+.bg-gradient-primary {
+    background: linear-gradient(45deg, #007bff, #00b4db);
+  }
+  .bg-gradient-success {
+    background: linear-gradient(45deg, #28a745, #48bb78);
+  }
+  .table-hover tbody tr:hover {
+    background-color: #f8f9fa !important;
+  }
+  .badge {
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 20px;
+  }
